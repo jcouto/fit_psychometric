@@ -7,12 +7,6 @@ from statsmodels.base.model import GenericLikelihoodModel
 from scipy.optimize import minimize
 import numpy as np
 
-# weibull fit
-def weibull(bias, slope, gamma1, gamma2, X):
-    ''' weibull function with lapse rates
-    '''
-    return gamma1 + (1. - gamma1 - gamma2) * (erf((X - bias) / slope) + 1.) / 2. +1e-9
-
 def cumulative_gaussian(alpha,beta,gamma,lmbda, X):
     '''
     Evaluate the cumulative gaussian psychometric function.
